@@ -135,11 +135,19 @@
   <ItemGroup>
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="NeueReferenz.cpp" />
+    <ClCompile Include="ReferenzAnzeigen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="datatypes.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="MainForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="NeueReferenz.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ReferenzAnzeigen.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>

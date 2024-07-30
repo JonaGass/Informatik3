@@ -1,5 +1,6 @@
 #pragma once
-
+#include "NeueReferenz.h"
+#include "ReferenzAnzeigen.h"
 namespace Informatik3 {
 
 	using namespace System;
@@ -167,11 +168,15 @@ namespace Informatik3 {
 	private: System::Void MainForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-			 }
+
+		ReferenzAnzeigen ^ frm2 = gcnew ReferenzAnzeigen;
+		frm2->Show();
+	
+	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 
-	/*Form2 ^ frm = gcnew Form2;
-	frm->Show(); */
+		NeueReferenz ^ frm = gcnew NeueReferenz;
+		frm->Show(); 
 	}
 	private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
 
