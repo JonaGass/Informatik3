@@ -3,10 +3,6 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
-// Global variables
-int a = 0;
-int b = 0;
-
 [STAThread]
 void main()
 {
