@@ -24,6 +24,12 @@
     <ClInclude Include="functions.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="NeueReferenz.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ReferenzAnzeigen.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainForm.cpp">
@@ -31,6 +37,12 @@
     </ClCompile>
     <ClCompile Include="functions.cpp">
       <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="NeueReferenz.cpp">
+      <Filter>Headerdateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ReferenzAnzeigen.cpp">
+      <Filter>Headerdateien</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
