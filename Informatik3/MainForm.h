@@ -17,9 +17,9 @@ namespace Informatik3 {
 	{
 
 	private:
-		array<String^>^ userInputs;
+		array<String^>^ userInputs;						// Array anlegen, später durch struct Array ersetzen
 	private: System::Windows::Forms::Label^  label1;
-			 int currentIndex;
+			 int currentIndex;							// Array index
 
 	public:
 		MainForm(void)
