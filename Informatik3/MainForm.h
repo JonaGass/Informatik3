@@ -15,6 +15,12 @@ namespace Informatik3 {
 	/// </summary>
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
+
+	private:
+		array<String^>^ userInputs;
+	private: System::Windows::Forms::Label^  label1;
+			 int currentIndex;
+
 	public:
 		MainForm(void)
 		{
@@ -22,6 +28,9 @@ namespace Informatik3 {
 			//
 			//TODO: Konstruktorcode hier hinzufügen.
 			//
+			userInputs = gcnew array<String^>(2); // Assuming you want to store up to 10 inputs
+			currentIndex = 0;
+
 		}
 
 	protected:
@@ -60,6 +69,18 @@ namespace Informatik3 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			//TEST
+			Button^ buttonOpenInput = gcnew Button();
+			buttonOpenInput->Text = "Open Input Form";
+			buttonOpenInput->Click += gcnew EventHandler(this, &MainForm::buttonOpenInput_Click);
+			this->Controls->Add(buttonOpenInput);
+
+			// Set position and size
+			buttonOpenInput->SetBounds(10, 10, 120, 25);
+			//TEST
+
+
+
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -68,6 +89,7 @@ namespace Informatik3 {
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -145,11 +167,21 @@ namespace Informatik3 {
 			this->button8->UseVisualStyleBackColor = true;
 			this->button8->Click += gcnew System::EventHandler(this, &MainForm::button8_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(100, 523);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(35, 13);
+			this->label1->TabIndex = 8;
+			this->label1->Text = L"label1";
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(737, 615);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->button6);
@@ -162,6 +194,7 @@ namespace Informatik3 {
 			this->Text = L"MainForm";
 			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -171,7 +204,8 @@ namespace Informatik3 {
 
 		ReferenzAnzeigen ^ frm2 = gcnew ReferenzAnzeigen;
 		frm2->Show();
-	
+		label1->Text = L"label1";
+		
 	}
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -182,5 +216,28 @@ namespace Informatik3 {
 
 	Application::Exit();
 	}
-	};
+	//TEST
+	private:
+		void buttonOpenInput_Click(Object^ sender, EventArgs^ e)
+		{
+			EingabeArticle^ inputForm = gcnew EingabeArticle();
+			if (inputForm->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+			{
+				if (currentIndex < userInputs->Length)
+				{
+					userInputs[currentIndex] = inputForm->GetUserInput();
+					
+					label1->Text = userInputs[currentIndex];
+					currentIndex++;
+				}
+				else
+				{
+					MessageBox::Show("Input limit reached.");
+				}
+			}
+		}
+	//TEST
+
+	
+};
 }

@@ -22,6 +22,13 @@ namespace Informatik3 {
 			//TODO: Add the constructor code here
 			//
 		}
+		String^ GetUserInput() {
+			return textBoxInput->Text;
+		}
+	private:
+		TextBox^ textBoxInput;
+		Button^ buttonSubmit;
+
 
 	protected:
 		/// <summary>
@@ -73,6 +80,21 @@ namespace Informatik3 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+
+			this->textBoxInput = gcnew TextBox();
+			this->buttonSubmit = gcnew Button();
+
+			this->buttonSubmit->Text = "Submit";
+			this->buttonSubmit->Click += gcnew EventHandler(this, &EingabeArticle::buttonSubmit_Click);
+
+			this->Controls->Add(this->textBoxInput);
+			this->Controls->Add(this->buttonSubmit);
+
+			// Set positions and sizes
+			this->textBoxInput->SetBounds(10, 10, 200, 20);
+			this->buttonSubmit->SetBounds(220, 10, 75, 25);
+
+
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -329,7 +351,15 @@ namespace Informatik3 {
 			this->PerformLayout();
 
 		}
+
+
 #pragma endregion
+
+	void buttonSubmit_Click(Object^ sender, EventArgs^ e)
+	{
+		this->DialogResult = System::Windows::Forms::DialogResult::OK;
+		this->Close();
+	}
 	private: System::Void EingabeArticle_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
