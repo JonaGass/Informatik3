@@ -30,6 +30,9 @@
     <ClInclude Include="ReferenzAnzeigen.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="EingabeArticle.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainForm.cpp">
@@ -44,5 +47,13 @@
     <ClCompile Include="ReferenzAnzeigen.cpp">
       <Filter>Headerdateien</Filter>
     </ClCompile>
+    <ClCompile Include="EingabeArticle.cpp">
+      <Filter>Headerdateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <Filter>Ressourcendateien</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
