@@ -14,3 +14,4 @@ extern void deleteDialog(data array[999], int *i);
 extern void save(data array[999], int i);
 extern void load(data array[999], int *i);
 extern void createBibTex(data array[999], int x);
+extern void view(data array[999], int i);

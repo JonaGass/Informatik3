@@ -31,3 +31,7 @@ typedef struct name {		// Datentyp zum Speichern/Manipulieren der Autorennamen
 	char firstName[20];
 	char lastName[20];
 };
+
+//deklaration des arrys zu global
+extern data kopie[100];
+extern data array[999];

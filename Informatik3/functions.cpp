@@ -6,6 +6,16 @@
 #include <string.h>
 #include <Windows.h>
 #include <conio.h>
+#include <iostream>
+#include <cstring>
+
+
+
+//Deklaration arry
+data kopie[100];
+data array[999];
+
+
 
 
 
@@ -838,10 +848,11 @@ void add(data array[999], int i) {
 // Funktion zum Anzeigen einer bestimmten Referenz. Es werden nur Felder mit hinterlegten Informationen angezeigt.
 void view(data array[999], int index) {
 
+
 	printf("\n                                 @%s\n\n", array[index].typ);
 
 	if (array[index].keyword != NULL && array[index].keyword[0] != '\0') {
-		printf("                                 Keyword: %s\n\n", array[index].keyword);
+		std::strcpy(kopie[1].keyword, array[index].keyword);
 	}
 
 	if (array[index].author != NULL && array[index].author[0] != '\0') {
@@ -1508,13 +1519,14 @@ void load(data array[999], int * i)
 	FILE * file = fopen("data.bin", "rb");						// Datei "data.bin" zum Lesen im "Binärmodus" öffnen
 
 	if (file == NULL) {											// Überprüfen ob Datei erfolgreich ob Datei noch nicht vorhanden war
-		system("cls");
-		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-		printf("                              +------------------------------------------------------------+\n");
-		printf("                                                Keine Referenzen von HD geladen      \n");
-		printf("                              +------------------------------------------------------------+\n");
-		Sleep(1500);
-		system("cls");
+		//system("cls");
+		//printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		//printf("                              +------------------------------------------------------------+\n");
+		//printf("                                                Keine Referenzen von HD geladen      \n");
+		//printf("                              +------------------------------------------------------------+\n");
+		//Sleep(1500);
+		//system("cls");
+		//getchar();
 	}
 	else {
 		size_t readIndex = fread(&* i, sizeof(int), 1, file);		// "index" aus "file" lesen und Anzahl der gelesenen Elemente speichern
@@ -1524,13 +1536,13 @@ void load(data array[999], int * i)
 			dataError();
 		}
 		else {														// Meldung über erfolgreichen Import anzeigen
-			system("cls");
-			printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-			printf("                              +------------------------------------------------------------+\n");
-			printf("                                                  Referenzen von HD geladen      \n");
-			printf("                              +------------------------------------------------------------+\n");
-			Sleep(1500);
-			system("cls");
+		//	system("cls");
+		//	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		//	printf("                              +------------------------------------------------------------+\n");
+		//	printf("                                                  Referenzen von HD geladen      \n");
+		//	printf("                              +------------------------------------------------------------+\n");
+		//	Sleep(1500);
+		//	system("cls");
 		}
 		fclose(file);												// Datei Schließen
 	}
