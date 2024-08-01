@@ -1,6 +1,24 @@
 #pragma once
 #include "NeueReferenz.h"
 #include "ReferenzAnzeigen.h"
+#include <array>
+#include <string>
+//#include "datatypes.h"
+
+public ref struct Datensatz {
+	System::String^ typ;        // Changed to String^ from array<char>^
+	System::String^ keyword;
+
+
+
+	//Datensatz() {
+	//	// Initialize arrays with appropriate sizes if needed
+	//	typ = "";
+	//	keyword = "";
+	//	// Repeat for other members...
+	//}
+};
+
 namespace Informatik3 {
 
 	using namespace System;
@@ -17,7 +35,7 @@ namespace Informatik3 {
 	{
 
 	private:
-		array<String^>^ userInputs;						// Array anlegen, später durch struct Array ersetzen
+		array<Datensatz^>^ userInputs;						// Array anlegen, später durch struct Array ersetzen
 	private: System::Windows::Forms::Label^  label1;
 			 int currentIndex;							// Array index
 
@@ -28,7 +46,7 @@ namespace Informatik3 {
 			//
 			//TODO: Konstruktorcode hier hinzufügen.
 			//
-			userInputs = gcnew array<String^>(2); // Assuming you want to store up to 10 inputs
+			userInputs = gcnew array<Datensatz^>(2); // Assuming you want to store up to 10 inputs
 			currentIndex = 0;
 
 		}
@@ -225,9 +243,15 @@ namespace Informatik3 {
 			{
 				if (currentIndex < userInputs->Length)
 				{
-					userInputs[currentIndex] = inputForm->GetUserInput();
+
+					// Initialize the current index of userInputs
+					if (userInputs[currentIndex] == nullptr) {
+						userInputs[currentIndex] = gcnew Datensatz(); // Create a new instance
+					}
+
+					userInputs[currentIndex]->typ = inputForm->GetUserInput();
 					
-					label1->Text = userInputs[currentIndex];
+					label1->Text = userInputs[currentIndex]->typ;
 					currentIndex++;
 				}
 				else
