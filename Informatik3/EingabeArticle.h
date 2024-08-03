@@ -73,6 +73,7 @@ namespace Informatik3 {
 
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  labelOptional;
 
 	private:
 		/// <summary>
@@ -110,6 +111,7 @@ namespace Informatik3 {
 			this->textBoxNotes = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->labelOptional = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// textBoxKeyword
@@ -186,21 +188,21 @@ namespace Informatik3 {
 			// 
 			// textBoxVolume
 			// 
-			this->textBoxVolume->Location = System::Drawing::Point(159, 271);
+			this->textBoxVolume->Location = System::Drawing::Point(159, 343);
 			this->textBoxVolume->Name = L"textBoxVolume";
 			this->textBoxVolume->Size = System::Drawing::Size(147, 20);
 			this->textBoxVolume->TabIndex = 9;
 			// 
 			// textBoxNumber
 			// 
-			this->textBoxNumber->Location = System::Drawing::Point(159, 315);
+			this->textBoxNumber->Location = System::Drawing::Point(159, 387);
 			this->textBoxNumber->Name = L"textBoxNumber";
 			this->textBoxNumber->Size = System::Drawing::Size(147, 20);
 			this->textBoxNumber->TabIndex = 10;
 			// 
 			// textBoxPages
 			// 
-			this->textBoxPages->Location = System::Drawing::Point(159, 361);
+			this->textBoxPages->Location = System::Drawing::Point(159, 433);
 			this->textBoxPages->Name = L"textBoxPages";
 			this->textBoxPages->Size = System::Drawing::Size(147, 20);
 			this->textBoxPages->TabIndex = 11;
@@ -244,7 +246,7 @@ namespace Informatik3 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(50, 278);
+			this->label6->Location = System::Drawing::Point(50, 350);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(42, 13);
 			this->label6->TabIndex = 16;
@@ -253,7 +255,7 @@ namespace Informatik3 {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(50, 318);
+			this->label7->Location = System::Drawing::Point(50, 390);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(46, 13);
 			this->label7->TabIndex = 17;
@@ -262,7 +264,7 @@ namespace Informatik3 {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(50, 364);
+			this->label8->Location = System::Drawing::Point(50, 436);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(37, 13);
 			this->label8->TabIndex = 18;
@@ -270,14 +272,14 @@ namespace Informatik3 {
 			// 
 			// textBoxMonth
 			// 
-			this->textBoxMonth->Location = System::Drawing::Point(159, 408);
+			this->textBoxMonth->Location = System::Drawing::Point(159, 480);
 			this->textBoxMonth->Name = L"textBoxMonth";
 			this->textBoxMonth->Size = System::Drawing::Size(147, 20);
 			this->textBoxMonth->TabIndex = 19;
 			// 
 			// textBoxNotes
 			// 
-			this->textBoxNotes->Location = System::Drawing::Point(159, 449);
+			this->textBoxNotes->Location = System::Drawing::Point(159, 521);
 			this->textBoxNotes->Name = L"textBoxNotes";
 			this->textBoxNotes->Size = System::Drawing::Size(147, 20);
 			this->textBoxNotes->TabIndex = 20;
@@ -285,7 +287,7 @@ namespace Informatik3 {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(50, 411);
+			this->label9->Location = System::Drawing::Point(50, 483);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(37, 13);
 			this->label9->TabIndex = 21;
@@ -294,17 +296,27 @@ namespace Informatik3 {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(50, 452);
+			this->label10->Location = System::Drawing::Point(50, 524);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(61, 13);
 			this->label10->TabIndex = 22;
 			this->label10->Text = L"Anmerkung";
+			// 
+			// labelOptional
+			// 
+			this->labelOptional->AutoSize = true;
+			this->labelOptional->Location = System::Drawing::Point(159, 302);
+			this->labelOptional->Name = L"labelOptional";
+			this->labelOptional->Size = System::Drawing::Size(44, 13);
+			this->labelOptional->TabIndex = 23;
+			this->labelOptional->Text = L"optional";
 			// 
 			// EingabeArticle
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(631, 733);
+			this->Controls->Add(this->labelOptional);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->textBoxNotes);
@@ -329,7 +341,7 @@ namespace Informatik3 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBoxKeyword);
 			this->Name = L"EingabeArticle";
-			this->Text = L"EingabeArticle";
+			this->Text = L"Article";
 			this->Load += gcnew System::EventHandler(this, &EingabeArticle::EingabeArticle_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -341,12 +353,39 @@ namespace Informatik3 {
 	private: System::Void buttonSave_Click(System::Object^  sender, System::EventArgs^  e) {
 		//speichern in DataStore::datensatz[DataStore::currentIndex]
 		//eventuell Gültigkeit der Eingaben überprüfen, z.B. Jahr nur Zahl erlaubt...
+		
+		
+		//Abfrage ob gegeben bei zwingend erforderlichen
+		String^ errorMessage = "";
 
+		if (String::IsNullOrWhiteSpace(textBoxKeyword->Text)) {
+			errorMessage += "Keyword ist erforderlich!.\n";
+		}
+		if (String::IsNullOrWhiteSpace(textBoxTitle->Text)) {
+			errorMessage += "Title ist erforderlich!.\n";
+		}
+		if (String::IsNullOrWhiteSpace(textBoxAuthor->Text)) {
+			errorMessage += "Author ist erforderlich!.\n";
+		}
+		if (String::IsNullOrWhiteSpace(textBoxJournal->Text)) {
+			errorMessage += "Journal ist erforderlich!.\n";
+		}
+		if (String::IsNullOrWhiteSpace(textBoxYear->Text)) {
+			errorMessage += "Year ist erforderlich!.\n";
+		}
+
+		if (!String::IsNullOrEmpty(errorMessage)) {
+			MessageBox::Show(errorMessage, "Missing Fields", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			return; // Nicht speichern
+		}
+		//mandatory
 		DataStore::datensatz[DataStore::currentIndex].Keyword = textBoxKeyword->Text;
 		DataStore::datensatz[DataStore::currentIndex].Title = textBoxTitle->Text;
 		DataStore::datensatz[DataStore::currentIndex].Author = textBoxAuthor->Text;
 		DataStore::datensatz[DataStore::currentIndex].Journal = textBoxJournal->Text;
 		DataStore::datensatz[DataStore::currentIndex].Year = textBoxYear->Text;
+
+		//optional
 		DataStore::datensatz[DataStore::currentIndex].Volume = textBoxVolume->Text;
 		DataStore::datensatz[DataStore::currentIndex].Number = textBoxNumber->Text;
 		DataStore::datensatz[DataStore::currentIndex].Pages = textBoxPages->Text;
@@ -355,6 +394,7 @@ namespace Informatik3 {
 		
 		//Bestätigung
 		MessageBox::Show("Daten gespeichert");
+		this->Close();
 	}
 	};
 }
