@@ -1,33 +1,29 @@
 #pragma once
 
-typedef struct data {		// Datentyp für Referenzen
-	char typ[15];
-	char keyword[30];
+using namespace System;
 
-	char author[200];
-	char title[200];
-	char journal[100];
-	char year[5];
-	char volume[10];
-	char number[20];
-	char pages[10];
-	char month[20];
-	char note[200];
-	char publisher[100];
-	char series[100];
-	char address[100];
-	char edition[20];
-	char howpublished[100];
-	char booktitle[200];
-	char editor[100];
-	char chapter[100];
-	char school[100];
-	char type[100];
-	char institution[100];
-	char organization[100];
-} Data;
-
-typedef struct name {		// Datentyp zum Speichern/Manipulieren der Autorennamen
-	char firstName[20];
-	char lastName[20];
+public value struct Referenzen {
+	String^ Typ;           
+	String^ Keyword;       
+	String^ Author;        
+	String^ Title;         
+	String^ Journal;       
+	String^ Year;          
+	String^ Volume;        
+	String^ Number;        
+	String^ Pages;         
+	String^ Month;         
+	String^ Note;          
+	String^ Publisher;     
+	String^ Series;        
+	String^ Address;       
+	String^ Edition;       
+	String^ HowPublished;  
+	String^ BookTitle;     
+	String^ Editor;        
+	String^ Chapter;       
+	String^ School;        
+	String^ Type;          
+	String^ Institution;   
+	String^ Organization;
 };

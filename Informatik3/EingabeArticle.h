@@ -1,4 +1,6 @@
 #pragma once
+#include "datatypes.h"
+#include "DataStore.h"
 
 namespace Informatik3 {
 
@@ -34,20 +36,30 @@ namespace Informatik3 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::TextBox^  textBoxKeyword;
+	protected:
 
-	private: System::Windows::Forms::TextBox^  textBox1;
+
 	protected:
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  buttonSave;
+
 	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::TextBox^  textBox2;
-	private: System::Windows::Forms::TextBox^  textBox3;
-	private: System::Windows::Forms::TextBox^  textBox4;
-	private: System::Windows::Forms::TextBox^  textBox5;
-	private: System::Windows::Forms::TextBox^  textBox6;
-	private: System::Windows::Forms::TextBox^  textBox7;
-	private: System::Windows::Forms::TextBox^  textBox8;
+	private: System::Windows::Forms::TextBox^  textBoxTitle;
+	private: System::Windows::Forms::TextBox^  textBoxAuthor;
+	private: System::Windows::Forms::TextBox^  textBoxJournal;
+	private: System::Windows::Forms::TextBox^  textBoxYear;
+	private: System::Windows::Forms::TextBox^  textBoxVolume;
+	private: System::Windows::Forms::TextBox^  textBoxNumber;
+	private: System::Windows::Forms::TextBox^  textBoxPages;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
@@ -55,8 +67,10 @@ namespace Informatik3 {
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::TextBox^  textBox9;
-	private: System::Windows::Forms::TextBox^  textBox10;
+	private: System::Windows::Forms::TextBox^  textBoxMonth;
+	private: System::Windows::Forms::TextBox^  textBoxNotes;
+
+
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  label10;
 
@@ -73,18 +87,18 @@ namespace Informatik3 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxKeyword = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->buttonSave = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxTitle = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAuthor = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxJournal = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxYear = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxVolume = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxNumber = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxPages = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -92,20 +106,18 @@ namespace Informatik3 {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxMonth = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxNotes = (gcnew System::Windows::Forms::TextBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-
 			// 
-			// textBox1
+			// textBoxKeyword
 			// 
-			this->textBox1->Location = System::Drawing::Point(159, 75);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(147, 20);
-			this->textBox1->TabIndex = 0;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &EingabeArticle::textBox1_TextChanged);
+			this->textBoxKeyword->Location = System::Drawing::Point(159, 75);
+			this->textBoxKeyword->Name = L"textBoxKeyword";
+			this->textBoxKeyword->Size = System::Drawing::Size(147, 20);
+			this->textBoxKeyword->TabIndex = 0;
 			// 
 			// label1
 			// 
@@ -115,7 +127,6 @@ namespace Informatik3 {
 			this->label1->Size = System::Drawing::Size(47, 13);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"keyword";
-			this->label1->Click += gcnew System::EventHandler(this, &EingabeArticle::label1_Click);
 			// 
 			// button1
 			// 
@@ -126,15 +137,15 @@ namespace Informatik3 {
 			this->button1->Text = L"Abbrechen";
 			this->button1->UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// buttonSave
 			// 
-			this->button2->Location = System::Drawing::Point(450, 75);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
-			this->button2->TabIndex = 3;
-			this->button2->Text = L"Speichern";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &EingabeArticle::button2_Click);
+			this->buttonSave->Location = System::Drawing::Point(450, 75);
+			this->buttonSave->Name = L"buttonSave";
+			this->buttonSave->Size = System::Drawing::Size(75, 23);
+			this->buttonSave->TabIndex = 3;
+			this->buttonSave->Text = L"Speichern";
+			this->buttonSave->UseVisualStyleBackColor = true;
+			this->buttonSave->Click += gcnew System::EventHandler(this, &EingabeArticle::buttonSave_Click);
 			// 
 			// button3
 			// 
@@ -145,54 +156,54 @@ namespace Informatik3 {
 			this->button3->Text = L"Beenden";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
-			// textBox2
+			// textBoxTitle
 			// 
-			this->textBox2->Location = System::Drawing::Point(159, 112);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(147, 20);
-			this->textBox2->TabIndex = 5;
+			this->textBoxTitle->Location = System::Drawing::Point(159, 112);
+			this->textBoxTitle->Name = L"textBoxTitle";
+			this->textBoxTitle->Size = System::Drawing::Size(147, 20);
+			this->textBoxTitle->TabIndex = 5;
 			// 
-			// textBox3
+			// textBoxAuthor
 			// 
-			this->textBox3->Location = System::Drawing::Point(159, 149);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(147, 20);
-			this->textBox3->TabIndex = 6;
+			this->textBoxAuthor->Location = System::Drawing::Point(159, 149);
+			this->textBoxAuthor->Name = L"textBoxAuthor";
+			this->textBoxAuthor->Size = System::Drawing::Size(147, 20);
+			this->textBoxAuthor->TabIndex = 6;
 			// 
-			// textBox4
+			// textBoxJournal
 			// 
-			this->textBox4->Location = System::Drawing::Point(159, 189);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(147, 20);
-			this->textBox4->TabIndex = 7;
+			this->textBoxJournal->Location = System::Drawing::Point(159, 189);
+			this->textBoxJournal->Name = L"textBoxJournal";
+			this->textBoxJournal->Size = System::Drawing::Size(147, 20);
+			this->textBoxJournal->TabIndex = 7;
 			// 
-			// textBox5
+			// textBoxYear
 			// 
-			this->textBox5->Location = System::Drawing::Point(159, 227);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(147, 20);
-			this->textBox5->TabIndex = 8;
+			this->textBoxYear->Location = System::Drawing::Point(159, 227);
+			this->textBoxYear->Name = L"textBoxYear";
+			this->textBoxYear->Size = System::Drawing::Size(147, 20);
+			this->textBoxYear->TabIndex = 8;
 			// 
-			// textBox6
+			// textBoxVolume
 			// 
-			this->textBox6->Location = System::Drawing::Point(159, 271);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(147, 20);
-			this->textBox6->TabIndex = 9;
+			this->textBoxVolume->Location = System::Drawing::Point(159, 271);
+			this->textBoxVolume->Name = L"textBoxVolume";
+			this->textBoxVolume->Size = System::Drawing::Size(147, 20);
+			this->textBoxVolume->TabIndex = 9;
 			// 
-			// textBox7
+			// textBoxNumber
 			// 
-			this->textBox7->Location = System::Drawing::Point(159, 315);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(147, 20);
-			this->textBox7->TabIndex = 10;
+			this->textBoxNumber->Location = System::Drawing::Point(159, 315);
+			this->textBoxNumber->Name = L"textBoxNumber";
+			this->textBoxNumber->Size = System::Drawing::Size(147, 20);
+			this->textBoxNumber->TabIndex = 10;
 			// 
-			// textBox8
+			// textBoxPages
 			// 
-			this->textBox8->Location = System::Drawing::Point(159, 361);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(147, 20);
-			this->textBox8->TabIndex = 11;
+			this->textBoxPages->Location = System::Drawing::Point(159, 361);
+			this->textBoxPages->Name = L"textBoxPages";
+			this->textBoxPages->Size = System::Drawing::Size(147, 20);
+			this->textBoxPages->TabIndex = 11;
 			// 
 			// label2
 			// 
@@ -202,7 +213,6 @@ namespace Informatik3 {
 			this->label2->Size = System::Drawing::Size(27, 13);
 			this->label2->TabIndex = 12;
 			this->label2->Text = L"Titel";
-			this->label2->Click += gcnew System::EventHandler(this, &EingabeArticle::label2_Click);
 			// 
 			// label3
 			// 
@@ -230,7 +240,6 @@ namespace Informatik3 {
 			this->label5->Size = System::Drawing::Size(27, 13);
 			this->label5->TabIndex = 15;
 			this->label5->Text = L"Jahr";
-			this->label5->Click += gcnew System::EventHandler(this, &EingabeArticle::label5_Click);
 			// 
 			// label6
 			// 
@@ -258,21 +267,20 @@ namespace Informatik3 {
 			this->label8->Size = System::Drawing::Size(37, 13);
 			this->label8->TabIndex = 18;
 			this->label8->Text = L"Seiten";
-			this->label8->Click += gcnew System::EventHandler(this, &EingabeArticle::label8_Click);
 			// 
-			// textBox9
+			// textBoxMonth
 			// 
-			this->textBox9->Location = System::Drawing::Point(159, 408);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(147, 20);
-			this->textBox9->TabIndex = 19;
+			this->textBoxMonth->Location = System::Drawing::Point(159, 408);
+			this->textBoxMonth->Name = L"textBoxMonth";
+			this->textBoxMonth->Size = System::Drawing::Size(147, 20);
+			this->textBoxMonth->TabIndex = 19;
 			// 
-			// textBox10
+			// textBoxNotes
 			// 
-			this->textBox10->Location = System::Drawing::Point(159, 449);
-			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(147, 20);
-			this->textBox10->TabIndex = 20;
+			this->textBoxNotes->Location = System::Drawing::Point(159, 449);
+			this->textBoxNotes->Name = L"textBoxNotes";
+			this->textBoxNotes->Size = System::Drawing::Size(147, 20);
+			this->textBoxNotes->TabIndex = 20;
 			// 
 			// label9
 			// 
@@ -282,7 +290,6 @@ namespace Informatik3 {
 			this->label9->Size = System::Drawing::Size(37, 13);
 			this->label9->TabIndex = 21;
 			this->label9->Text = L"Monat";
-			this->label9->Click += gcnew System::EventHandler(this, &EingabeArticle::label9_Click);
 			// 
 			// label10
 			// 
@@ -292,7 +299,6 @@ namespace Informatik3 {
 			this->label10->Size = System::Drawing::Size(61, 13);
 			this->label10->TabIndex = 22;
 			this->label10->Text = L"Anmerkung";
-
 			// 
 			// EingabeArticle
 			// 
@@ -301,8 +307,8 @@ namespace Informatik3 {
 			this->ClientSize = System::Drawing::Size(631, 733);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label9);
-			this->Controls->Add(this->textBox10);
-			this->Controls->Add(this->textBox9);
+			this->Controls->Add(this->textBoxNotes);
+			this->Controls->Add(this->textBoxMonth);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
@@ -310,18 +316,18 @@ namespace Informatik3 {
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->textBox8);
-			this->Controls->Add(this->textBox7);
-			this->Controls->Add(this->textBox6);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBoxPages);
+			this->Controls->Add(this->textBoxNumber);
+			this->Controls->Add(this->textBoxVolume);
+			this->Controls->Add(this->textBoxYear);
+			this->Controls->Add(this->textBoxJournal);
+			this->Controls->Add(this->textBoxAuthor);
+			this->Controls->Add(this->textBoxTitle);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->buttonSave);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textBoxKeyword);
 			this->Name = L"EingabeArticle";
 			this->Text = L"EingabeArticle";
 			this->Load += gcnew System::EventHandler(this, &EingabeArticle::EingabeArticle_Load);
@@ -332,19 +338,23 @@ namespace Informatik3 {
 #pragma endregion
 	private: System::Void EingabeArticle_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
-	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void label5_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void label8_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void label9_Click(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-	}
-	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void buttonSave_Click(System::Object^  sender, System::EventArgs^  e) {
+		//speichern in DataStore::datensatz[DataStore::currentIndex]
+		//eventuell Gültigkeit der Eingaben überprüfen, z.B. Jahr nur Zahl erlaubt...
+
+		DataStore::datensatz[DataStore::currentIndex].Keyword = textBoxKeyword->Text;
+		DataStore::datensatz[DataStore::currentIndex].Title = textBoxTitle->Text;
+		DataStore::datensatz[DataStore::currentIndex].Author = textBoxAuthor->Text;
+		DataStore::datensatz[DataStore::currentIndex].Journal = textBoxJournal->Text;
+		DataStore::datensatz[DataStore::currentIndex].Year = textBoxYear->Text;
+		DataStore::datensatz[DataStore::currentIndex].Volume = textBoxVolume->Text;
+		DataStore::datensatz[DataStore::currentIndex].Number = textBoxNumber->Text;
+		DataStore::datensatz[DataStore::currentIndex].Pages = textBoxPages->Text;
+		DataStore::datensatz[DataStore::currentIndex].Month = textBoxMonth->Text;
+		DataStore::datensatz[DataStore::currentIndex].Note = textBoxNotes->Text;
+		
+		//Bestätigung
+		MessageBox::Show("Daten gespeichert");
 	}
 	};
 }

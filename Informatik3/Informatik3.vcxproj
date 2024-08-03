@@ -105,6 +105,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,12 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EingabeArticle.cpp" />
-    <ClCompile Include="functions.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="NeueReferenz.cpp" />
     <ClCompile Include="ReferenzAnzeigen.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataStore.h" />
     <ClInclude Include="datatypes.h" />
     <ClInclude Include="EingabeArticle.h">
       <FileType>CppForm</FileType>
@@ -164,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NeueReferenz.resx">
       <DependentUpon>NeueReferenz.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferenzAnzeigen.resx">
+      <DependentUpon>ReferenzAnzeigen.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

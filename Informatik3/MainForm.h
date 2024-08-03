@@ -1,6 +1,9 @@
 #pragma once
 #include "NeueReferenz.h"
 #include "ReferenzAnzeigen.h"
+#include "datatypes.h"
+#include "DataStore.h"
+
 namespace Informatik3 {
 
 	using namespace System;
