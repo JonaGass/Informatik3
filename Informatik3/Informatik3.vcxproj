@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EingabeArticle.cpp" />
+    <ClCompile Include="EingabeBook.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="NeueReferenz.cpp" />
     <ClCompile Include="ReferenzAnzeigen.cpp" />
@@ -144,6 +145,9 @@
     <ClInclude Include="DataStore.h" />
     <ClInclude Include="datatypes.h" />
     <ClInclude Include="EingabeArticle.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EingabeBook.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="functions.h" />

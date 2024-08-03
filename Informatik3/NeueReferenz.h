@@ -1,5 +1,6 @@
 #pragma once
 #include "EingabeArticle.h"
+#include "EingabeBook.h"
 
 namespace Informatik3 {
 
@@ -79,9 +80,7 @@ namespace Informatik3 {
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->button14 = (gcnew System::Windows::Forms::Button());
-
 			this->SuspendLayout();
-
 			// 
 			// button1
 			// 
@@ -101,6 +100,7 @@ namespace Informatik3 {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"book";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &NeueReferenz::button2_Click);
 			// 
 			// button3
 			// 
@@ -248,5 +248,12 @@ namespace Informatik3 {
 		this->Close();
 
 	}
-	};
+	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+
+		EingabeBook ^ frm3 = gcnew EingabeBook;
+		frm3->Show();
+		NeueReferenz ^ frm2 = gcnew NeueReferenz;
+		this->Close();
+	}
+};
 }

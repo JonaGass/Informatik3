@@ -36,6 +36,9 @@
     <ClInclude Include="DataStore.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="EingabeBook.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainForm.cpp">
@@ -50,6 +53,9 @@
     <ClCompile Include="EingabeArticle.cpp">
       <Filter>Headerdateien</Filter>
     </ClCompile>
+    <ClCompile Include="EingabeBook.cpp">
+      <Filter>Headerdateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
@@ -59,6 +65,9 @@
       <Filter>Ressourcendateien</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="EingabeArticle.resx">
+      <Filter>Ressourcendateien</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReferenzAnzeigen.resx">
       <Filter>Ressourcendateien</Filter>
     </EmbeddedResource>
   </ItemGroup>
