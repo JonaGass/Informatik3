@@ -638,11 +638,52 @@
 			DataStore::currentIndex = Convert::ToInt32(textBoxIndex->Text);
 			MessageBox::Show("Index gesetzt");
 		}
+		private: System::Void AlignTextBoxes() {
+			int topOffset = 150;  //Nur TextBoxes mit Inhalt in geordneter Liste anzeigen
+			const int verticalSpacing = 10;  //Abstand
+
+			// Array {label, TextBox}
+			array<System::Windows::Forms::Control^>^ controls = {
+				labelKeyword, textBoxOutputKeyword,
+				labelTitle, textBoxOutputTitle,
+				labelAuthor, textBoxOutputAuthor,
+				labelJournal, textBoxOutputJournal,
+				labelYear, textBoxOutputYear,
+				labelVolume, textBoxOutputVolume,
+				labelNumber, textBoxOutputNumber,
+				labelPages, textBoxOutputPages,
+				labelMonth, textBoxOutputMonth,
+				labelNote, textBoxOutputNotes,
+				labelPublisher, textBoxOutputPublisher,
+				labelSeries, textBoxOutputSeries,
+				labelAddress, textBoxOutputAddress,
+				labelEdition, textBoxOutputEdition,
+				labelHowPublished, textBoxOutputHowPublished,
+				labelBookTitle, textBoxOutputBookTitle,
+				labelEditor, textBoxOutputEditor,
+				labelChapter, textBoxOutputChapter,
+				labelSchool, textBoxOutputSchool,
+				labelType, textBoxOutputType,
+				labelInstitution, textBoxOutputInstitution,
+				labelOrganization, textBoxOutputOrganization,
+				labelTyp, textBoxOutputTyp
+			};
+
+			// wenn sichtbar in Liste aufnehmen
+			for (int i = 0; i < controls->Length; i += 2) {
+				if (controls[i + 1]->Visible) { // wenn die TextBox sichtbar ist
+					controls[i]->Top = topOffset; // Label in top Position
+					controls[i + 1]->Top = topOffset; // TextBox in Top Position
+					topOffset += controls[i]->Height + verticalSpacing; // Offset für nächstes Paar setzen
+				}
+			}
+		}
 		private: System::Void buttonShowData_Click(System::Object^  sender, System::EventArgs^  e) {
 	
 			Referenzen currentReference = DataStore::datensatz[DataStore::currentIndex];
 
 			//Textbox zurücksetzen
+			textBoxOutputTyp->Text = "";
 			textBoxOutputKeyword->Text = "";
 			textBoxOutputTitle->Text = "";
 			textBoxOutputAuthor->Text = "";
@@ -653,6 +694,19 @@
 			textBoxOutputPages->Text = "";
 			textBoxOutputMonth->Text = "";
 			textBoxOutputNotes->Text = "";
+			textBoxOutputPublisher->Text = "";
+			textBoxOutputSeries->Text = "";
+			textBoxOutputAddress->Text = "";
+			textBoxOutputEdition->Text = "";
+			textBoxOutputHowPublished->Text = "";
+			textBoxOutputBookTitle->Text = "";
+			textBoxOutputEditor->Text = "";
+			textBoxOutputChapter->Text = "";
+			textBoxOutputSchool->Text = "";
+			textBoxOutputType->Text = "";
+			textBoxOutputInstitution->Text = "";
+			textBoxOutputOrganization->Text = "";
+
 
 			// Nur Textboxes mit Inhalt werden angezeigt
 			if (!String::IsNullOrEmpty(currentReference.Typ)) {
@@ -884,6 +938,7 @@
 				textBoxOutputOrganization->Visible = false;
 				labelOrganization->Visible = false;
 			}
+			AlignTextBoxes();
 		}
 	};
 }
