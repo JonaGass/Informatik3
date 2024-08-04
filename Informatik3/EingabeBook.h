@@ -442,6 +442,7 @@ namespace Informatik3 {
 			return; // Nicht speichern
 		}
 		//mandatory
+		DataStore::datensatz[DataStore::currentIndex].Typ = "Book";
 		DataStore::datensatz[DataStore::currentIndex].Keyword = textBoxKeyword->Text;
 		DataStore::datensatz[DataStore::currentIndex].Title = textBoxTitle->Text;
 		DataStore::datensatz[DataStore::currentIndex].Author = textBoxAuthor->Text;

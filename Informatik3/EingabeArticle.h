@@ -390,7 +390,8 @@ namespace Informatik3 {
 			MessageBox::Show(errorMessage, "Fehlende Eingaben", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return; // Nicht speichern
 		}
-		//mandatory
+		//erforderlich
+		DataStore::datensatz[DataStore::currentIndex].Typ = "Article";
 		DataStore::datensatz[DataStore::currentIndex].Keyword = textBoxKeyword->Text;
 		DataStore::datensatz[DataStore::currentIndex].Title = textBoxTitle->Text;
 		DataStore::datensatz[DataStore::currentIndex].Author = textBoxAuthor->Text;
