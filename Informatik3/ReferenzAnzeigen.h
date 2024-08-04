@@ -98,6 +98,8 @@
 		private: System::Windows::Forms::Label^  labelOrganization;
 		private: System::Windows::Forms::TextBox^  textBoxOutputTyp;
 		private: System::Windows::Forms::Label^  labelTyp;
+		private: System::Windows::Forms::Button^  buttonHigher;
+		private: System::Windows::Forms::Button^  buttonLower;
 
 		private:
 			/// <summary>
@@ -162,6 +164,8 @@
 				this->labelOrganization = (gcnew System::Windows::Forms::Label());
 				this->textBoxOutputTyp = (gcnew System::Windows::Forms::TextBox());
 				this->labelTyp = (gcnew System::Windows::Forms::Label());
+				this->buttonHigher = (gcnew System::Windows::Forms::Button());
+				this->buttonLower = (gcnew System::Windows::Forms::Button());
 				this->SuspendLayout();
 				// 
 				// labelIndex
@@ -568,11 +572,33 @@
 				this->labelTyp->TabIndex = 48;
 				this->labelTyp->Text = L"Typ";
 				// 
+				// buttonHigher
+				// 
+				this->buttonHigher->Location = System::Drawing::Point(217, 78);
+				this->buttonHigher->Name = L"buttonHigher";
+				this->buttonHigher->Size = System::Drawing::Size(75, 23);
+				this->buttonHigher->TabIndex = 50;
+				this->buttonHigher->Text = L"->";
+				this->buttonHigher->UseVisualStyleBackColor = true;
+				this->buttonHigher->Click += gcnew System::EventHandler(this, &ReferenzAnzeigen::buttonHigher_Click);
+				// 
+				// buttonLower
+				// 
+				this->buttonLower->Location = System::Drawing::Point(136, 78);
+				this->buttonLower->Name = L"buttonLower";
+				this->buttonLower->Size = System::Drawing::Size(75, 23);
+				this->buttonLower->TabIndex = 51;
+				this->buttonLower->Text = L"<-";
+				this->buttonLower->UseVisualStyleBackColor = true;
+				this->buttonLower->Click += gcnew System::EventHandler(this, &ReferenzAnzeigen::buttonLower_Click);
+				// 
 				// ReferenzAnzeigen
 				// 
 				this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				this->ClientSize = System::Drawing::Size(549, 776);
+				this->Controls->Add(this->buttonLower);
+				this->Controls->Add(this->buttonHigher);
 				this->Controls->Add(this->textBoxOutputTyp);
 				this->Controls->Add(this->labelTyp);
 				this->Controls->Add(this->textBoxOutputOrganization);
@@ -940,5 +966,24 @@
 			}
 			AlignTextBoxes();
 		}
-	};
+		private: System::Void buttonLower_Click(System::Object^  sender, System::EventArgs^  e) {	//Durchblättern links
+			if (DataStore::currentIndex > 0) {
+				DataStore::currentIndex--;
+				buttonShowData_Click(sender, e);
+			}
+			else {
+				MessageBox::Show("Erster Eintrag");
+			}
+			
+		}
+		private: System::Void buttonHigher_Click(System::Object^  sender, System::EventArgs^  e) {	//Durchblättern rechts
+			if (DataStore::currentIndex < 999) {
+				DataStore::currentIndex++;
+				buttonShowData_Click(sender, e);
+			}
+			else {
+				MessageBox::Show("Letzter Eintrag");
+			}
+		}
+};
 }
