@@ -214,7 +214,7 @@ namespace Informatik3 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(27, 13);
 			this->label2->TabIndex = 12;
-			this->label2->Text = L"Titel";
+			this->label2->Text = L"Title";
 			// 
 			// label3
 			// 
@@ -239,9 +239,9 @@ namespace Informatik3 {
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(50, 230);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(27, 13);
+			this->label5->Size = System::Drawing::Size(29, 13);
 			this->label5->TabIndex = 15;
-			this->label5->Text = L"Jahr";
+			this->label5->Text = L"Year";
 			// 
 			// label6
 			// 
@@ -257,9 +257,9 @@ namespace Informatik3 {
 			this->label7->AutoSize = true;
 			this->label7->Location = System::Drawing::Point(50, 390);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(46, 13);
+			this->label7->Size = System::Drawing::Size(44, 13);
 			this->label7->TabIndex = 17;
-			this->label7->Text = L"Nummer";
+			this->label7->Text = L"Number";
 			// 
 			// label8
 			// 
@@ -268,7 +268,7 @@ namespace Informatik3 {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(37, 13);
 			this->label8->TabIndex = 18;
-			this->label8->Text = L"Seiten";
+			this->label8->Text = L"Pages";
 			// 
 			// textBoxMonth
 			// 
@@ -291,16 +291,16 @@ namespace Informatik3 {
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(37, 13);
 			this->label9->TabIndex = 21;
-			this->label9->Text = L"Monat";
+			this->label9->Text = L"Month";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
 			this->label10->Location = System::Drawing::Point(50, 524);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(61, 13);
+			this->label10->Size = System::Drawing::Size(30, 13);
 			this->label10->TabIndex = 22;
-			this->label10->Text = L"Anmerkung";
+			this->label10->Text = L"Note";
 			// 
 			// labelOptional
 			// 
@@ -355,27 +355,39 @@ namespace Informatik3 {
 		//eventuell Gültigkeit der Eingaben überprüfen, z.B. Jahr nur Zahl erlaubt...
 		
 		
-		//Abfrage ob gegeben bei zwingend erforderlichen
+		//Abfrage der erforderlichen Felder
 		String^ errorMessage = "";
 
 		if (String::IsNullOrWhiteSpace(textBoxKeyword->Text)) {
-			errorMessage += "Keyword ist erforderlich!.\n";
+			errorMessage += "Keyword ist erforderlich!\n";
 		}
 		if (String::IsNullOrWhiteSpace(textBoxTitle->Text)) {
-			errorMessage += "Title ist erforderlich!.\n";
+			errorMessage += "Title ist erforderlich!\n";
 		}
 		if (String::IsNullOrWhiteSpace(textBoxAuthor->Text)) {
-			errorMessage += "Author ist erforderlich!.\n";
+			errorMessage += "Author ist erforderlich!\n";
 		}
 		if (String::IsNullOrWhiteSpace(textBoxJournal->Text)) {
-			errorMessage += "Journal ist erforderlich!.\n";
+			errorMessage += "Journal ist erforderlich!\n";
 		}
-		if (String::IsNullOrWhiteSpace(textBoxYear->Text)) {
-			errorMessage += "Year ist erforderlich!.\n";
+		int year;
+		if (String::IsNullOrWhiteSpace(textBoxYear->Text) || !Int32::TryParse(textBoxYear->Text, year)) {//Check ob Zahl
+			errorMessage += "Year muss eine Zahl sein!\n";
+		}
+		int volume, number, pages;
+		if (!String::IsNullOrWhiteSpace(textBoxVolume->Text) && !Int32::TryParse(textBoxVolume->Text, volume)) {//Check ob Zahl
+			errorMessage += "Volume muss eine Zahl sein oder leer bleiben!\n";
+		}
+		if (!String::IsNullOrWhiteSpace(textBoxNumber->Text) && !Int32::TryParse(textBoxNumber->Text, number)) {//Check ob Zahl
+			errorMessage += "Number muss eine Zahl sein oder leer bleiben!\n";
+		}
+		if (!String::IsNullOrWhiteSpace(textBoxPages->Text) && !Int32::TryParse(textBoxPages->Text, pages)) {//Check ob Zahl
+			errorMessage += "Pages muss eine Zahl sein oder leer bleiben!\n";
 		}
 
+
 		if (!String::IsNullOrEmpty(errorMessage)) {
-			MessageBox::Show(errorMessage, "Missing Fields", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show(errorMessage, "Fehlende Eingaben", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return; // Nicht speichern
 		}
 		//mandatory
@@ -394,6 +406,7 @@ namespace Informatik3 {
 		
 		//Bestätigung
 		MessageBox::Show("Daten gespeichert");
+		DataStore::currentIndex++; //Index erhöhen für nächste Eingabe
 		this->Close();
 	}
 	};

@@ -40,16 +40,26 @@ namespace Informatik3 {
 	protected:
 	private: System::Windows::Forms::Button^  buttonIndex;
 	private: System::Windows::Forms::TextBox^  textBoxIndex;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Label^  label2;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::Label^  label9;
-	private: System::Windows::Forms::Label^  label10;
+	private: System::Windows::Forms::Label^  labelKeyword;
+	private: System::Windows::Forms::Label^  labelTitle;
+	private: System::Windows::Forms::Label^  labelAuthor;
+	private: System::Windows::Forms::Label^  labelJournal;
+	private: System::Windows::Forms::Label^  labelYear;
+	private: System::Windows::Forms::Label^  labelVolume;
+	private: System::Windows::Forms::Label^  labelNumber;
+	private: System::Windows::Forms::Label^  labelPages;
+	private: System::Windows::Forms::Label^  labelMonth;
+	private: System::Windows::Forms::Label^  labelNote;
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::TextBox^  textBoxOutputKeyword;
 	private: System::Windows::Forms::TextBox^  textBoxOutputTitle;
 	private: System::Windows::Forms::TextBox^  textBoxOutputAuthor;
@@ -78,16 +88,16 @@ namespace Informatik3 {
 			this->labelIndex = (gcnew System::Windows::Forms::Label());
 			this->buttonIndex = (gcnew System::Windows::Forms::Button());
 			this->textBoxIndex = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->labelKeyword = (gcnew System::Windows::Forms::Label());
+			this->labelTitle = (gcnew System::Windows::Forms::Label());
+			this->labelAuthor = (gcnew System::Windows::Forms::Label());
+			this->labelJournal = (gcnew System::Windows::Forms::Label());
+			this->labelYear = (gcnew System::Windows::Forms::Label());
+			this->labelVolume = (gcnew System::Windows::Forms::Label());
+			this->labelNumber = (gcnew System::Windows::Forms::Label());
+			this->labelPages = (gcnew System::Windows::Forms::Label());
+			this->labelMonth = (gcnew System::Windows::Forms::Label());
+			this->labelNote = (gcnew System::Windows::Forms::Label());
 			this->textBoxOutputKeyword = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxOutputTitle = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxOutputAuthor = (gcnew System::Windows::Forms::TextBox());
@@ -127,162 +137,162 @@ namespace Informatik3 {
 			this->textBoxIndex->Size = System::Drawing::Size(100, 20);
 			this->textBoxIndex->TabIndex = 2;
 			// 
-			// label1
+			// labelKeyword
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(30, 137);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(48, 13);
-			this->label1->TabIndex = 3;
-			this->label1->Text = L"Keyword";
+			this->labelKeyword->AutoSize = true;
+			this->labelKeyword->Location = System::Drawing::Point(30, 150);
+			this->labelKeyword->Name = L"labelKeyword";
+			this->labelKeyword->Size = System::Drawing::Size(48, 13);
+			this->labelKeyword->TabIndex = 3;
+			this->labelKeyword->Text = L"Keyword";
 			// 
-			// label2
+			// labelTitle
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(30, 186);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(27, 13);
-			this->label2->TabIndex = 4;
-			this->label2->Text = L"Titel";
+			this->labelTitle->AutoSize = true;
+			this->labelTitle->Location = System::Drawing::Point(30, 180);
+			this->labelTitle->Name = L"labelTitle";
+			this->labelTitle->Size = System::Drawing::Size(27, 13);
+			this->labelTitle->TabIndex = 4;
+			this->labelTitle->Text = L"Titel";
 			// 
-			// label3
+			// labelAuthor
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(30, 234);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(38, 13);
-			this->label3->TabIndex = 5;
-			this->label3->Text = L"Author";
+			this->labelAuthor->AutoSize = true;
+			this->labelAuthor->Location = System::Drawing::Point(30, 210);
+			this->labelAuthor->Name = L"labelAuthor";
+			this->labelAuthor->Size = System::Drawing::Size(38, 13);
+			this->labelAuthor->TabIndex = 5;
+			this->labelAuthor->Text = L"Author";
 			// 
-			// label4
+			// labelJournal
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(30, 284);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(41, 13);
-			this->label4->TabIndex = 6;
-			this->label4->Text = L"Journal";
+			this->labelJournal->AutoSize = true;
+			this->labelJournal->Location = System::Drawing::Point(30, 240);
+			this->labelJournal->Name = L"labelJournal";
+			this->labelJournal->Size = System::Drawing::Size(41, 13);
+			this->labelJournal->TabIndex = 6;
+			this->labelJournal->Text = L"Journal";
 			// 
-			// label5
+			// labelYear
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(30, 342);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(27, 13);
-			this->label5->TabIndex = 7;
-			this->label5->Text = L"Jahr";
+			this->labelYear->AutoSize = true;
+			this->labelYear->Location = System::Drawing::Point(30, 340);
+			this->labelYear->Name = L"labelYear";
+			this->labelYear->Size = System::Drawing::Size(27, 13);
+			this->labelYear->TabIndex = 7;
+			this->labelYear->Text = L"Jahr";
 			// 
-			// label6
+			// labelVolume
 			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(30, 391);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(42, 13);
-			this->label6->TabIndex = 8;
-			this->label6->Text = L"Volume";
+			this->labelVolume->AutoSize = true;
+			this->labelVolume->Location = System::Drawing::Point(30, 370);
+			this->labelVolume->Name = L"labelVolume";
+			this->labelVolume->Size = System::Drawing::Size(42, 13);
+			this->labelVolume->TabIndex = 8;
+			this->labelVolume->Text = L"Volume";
 			// 
-			// label7
+			// labelNumber
 			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(30, 435);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(46, 13);
-			this->label7->TabIndex = 9;
-			this->label7->Text = L"Nummer";
+			this->labelNumber->AutoSize = true;
+			this->labelNumber->Location = System::Drawing::Point(30, 400);
+			this->labelNumber->Name = L"labelNumber";
+			this->labelNumber->Size = System::Drawing::Size(46, 13);
+			this->labelNumber->TabIndex = 9;
+			this->labelNumber->Text = L"Nummer";
 			// 
-			// label8
+			// labelPages
 			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(30, 474);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(37, 13);
-			this->label8->TabIndex = 10;
-			this->label8->Text = L"Seiten";
+			this->labelPages->AutoSize = true;
+			this->labelPages->Location = System::Drawing::Point(30, 430);
+			this->labelPages->Name = L"labelPages";
+			this->labelPages->Size = System::Drawing::Size(37, 13);
+			this->labelPages->TabIndex = 10;
+			this->labelPages->Text = L"Seiten";
 			// 
-			// label9
+			// labelMonth
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(30, 514);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(37, 13);
-			this->label9->TabIndex = 11;
-			this->label9->Text = L"Monat";
+			this->labelMonth->AutoSize = true;
+			this->labelMonth->Location = System::Drawing::Point(30, 460);
+			this->labelMonth->Name = L"labelMonth";
+			this->labelMonth->Size = System::Drawing::Size(37, 13);
+			this->labelMonth->TabIndex = 11;
+			this->labelMonth->Text = L"Monat";
 			// 
-			// label10
+			// labelNote
 			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(30, 553);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(61, 13);
-			this->label10->TabIndex = 12;
-			this->label10->Text = L"Anmerkung";
+			this->labelNote->AutoSize = true;
+			this->labelNote->Location = System::Drawing::Point(30, 490);
+			this->labelNote->Name = L"labelNote";
+			this->labelNote->Size = System::Drawing::Size(61, 13);
+			this->labelNote->TabIndex = 12;
+			this->labelNote->Text = L"Anmerkung";
 			// 
 			// textBoxOutputKeyword
 			// 
-			this->textBoxOutputKeyword->Location = System::Drawing::Point(181, 130);
+			this->textBoxOutputKeyword->Location = System::Drawing::Point(181, 150);
 			this->textBoxOutputKeyword->Name = L"textBoxOutputKeyword";
 			this->textBoxOutputKeyword->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputKeyword->TabIndex = 13;
 			// 
 			// textBoxOutputTitle
 			// 
-			this->textBoxOutputTitle->Location = System::Drawing::Point(181, 179);
+			this->textBoxOutputTitle->Location = System::Drawing::Point(181, 180);
 			this->textBoxOutputTitle->Name = L"textBoxOutputTitle";
 			this->textBoxOutputTitle->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputTitle->TabIndex = 14;
 			// 
 			// textBoxOutputAuthor
 			// 
-			this->textBoxOutputAuthor->Location = System::Drawing::Point(181, 227);
+			this->textBoxOutputAuthor->Location = System::Drawing::Point(181, 210);
 			this->textBoxOutputAuthor->Name = L"textBoxOutputAuthor";
 			this->textBoxOutputAuthor->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputAuthor->TabIndex = 15;
 			// 
 			// textBoxOutputJournal
 			// 
-			this->textBoxOutputJournal->Location = System::Drawing::Point(181, 277);
+			this->textBoxOutputJournal->Location = System::Drawing::Point(181, 240);
 			this->textBoxOutputJournal->Name = L"textBoxOutputJournal";
 			this->textBoxOutputJournal->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputJournal->TabIndex = 16;
 			// 
 			// textBoxOutputYear
 			// 
-			this->textBoxOutputYear->Location = System::Drawing::Point(181, 335);
+			this->textBoxOutputYear->Location = System::Drawing::Point(181, 340);
 			this->textBoxOutputYear->Name = L"textBoxOutputYear";
 			this->textBoxOutputYear->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputYear->TabIndex = 17;
 			// 
 			// textBoxOutputVolume
 			// 
-			this->textBoxOutputVolume->Location = System::Drawing::Point(181, 384);
+			this->textBoxOutputVolume->Location = System::Drawing::Point(181, 370);
 			this->textBoxOutputVolume->Name = L"textBoxOutputVolume";
 			this->textBoxOutputVolume->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputVolume->TabIndex = 18;
 			// 
 			// textBoxOutputNumber
 			// 
-			this->textBoxOutputNumber->Location = System::Drawing::Point(181, 428);
+			this->textBoxOutputNumber->Location = System::Drawing::Point(181, 400);
 			this->textBoxOutputNumber->Name = L"textBoxOutputNumber";
 			this->textBoxOutputNumber->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputNumber->TabIndex = 19;
 			// 
 			// textBoxOutputPages
 			// 
-			this->textBoxOutputPages->Location = System::Drawing::Point(181, 467);
+			this->textBoxOutputPages->Location = System::Drawing::Point(181, 430);
 			this->textBoxOutputPages->Name = L"textBoxOutputPages";
 			this->textBoxOutputPages->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputPages->TabIndex = 20;
 			// 
 			// textBoxOutputMonth
 			// 
-			this->textBoxOutputMonth->Location = System::Drawing::Point(181, 507);
+			this->textBoxOutputMonth->Location = System::Drawing::Point(181, 460);
 			this->textBoxOutputMonth->Name = L"textBoxOutputMonth";
 			this->textBoxOutputMonth->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputMonth->TabIndex = 21;
 			// 
 			// textBoxOutputNotes
 			// 
-			this->textBoxOutputNotes->Location = System::Drawing::Point(181, 546);
+			this->textBoxOutputNotes->Location = System::Drawing::Point(181, 490);
 			this->textBoxOutputNotes->Name = L"textBoxOutputNotes";
 			this->textBoxOutputNotes->Size = System::Drawing::Size(100, 20);
 			this->textBoxOutputNotes->TabIndex = 22;
@@ -291,7 +301,7 @@ namespace Informatik3 {
 			// 
 			this->buttonShowData->Location = System::Drawing::Point(334, 127);
 			this->buttonShowData->Name = L"buttonShowData";
-			this->buttonShowData->Size = System::Drawing::Size(75, 23);
+			this->buttonShowData->Size = System::Drawing::Size(131, 23);
 			this->buttonShowData->TabIndex = 23;
 			this->buttonShowData->Text = L"Datensatz anzeigen";
 			this->buttonShowData->UseVisualStyleBackColor = true;
@@ -301,7 +311,7 @@ namespace Informatik3 {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(578, 741);
+			this->ClientSize = System::Drawing::Size(494, 545);
 			this->Controls->Add(this->buttonShowData);
 			this->Controls->Add(this->textBoxOutputNotes);
 			this->Controls->Add(this->textBoxOutputMonth);
@@ -313,16 +323,16 @@ namespace Informatik3 {
 			this->Controls->Add(this->textBoxOutputAuthor);
 			this->Controls->Add(this->textBoxOutputTitle);
 			this->Controls->Add(this->textBoxOutputKeyword);
-			this->Controls->Add(this->label10);
-			this->Controls->Add(this->label9);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->labelNote);
+			this->Controls->Add(this->labelMonth);
+			this->Controls->Add(this->labelPages);
+			this->Controls->Add(this->labelNumber);
+			this->Controls->Add(this->labelVolume);
+			this->Controls->Add(this->labelYear);
+			this->Controls->Add(this->labelJournal);
+			this->Controls->Add(this->labelAuthor);
+			this->Controls->Add(this->labelTitle);
+			this->Controls->Add(this->labelKeyword);
 			this->Controls->Add(this->textBoxIndex);
 			this->Controls->Add(this->buttonIndex);
 			this->Controls->Add(this->labelIndex);
@@ -342,17 +352,121 @@ namespace Informatik3 {
 		MessageBox::Show("Index gesetzt");
 	}
 private: System::Void buttonShowData_Click(System::Object^  sender, System::EventArgs^  e) {
-	textBoxOutputKeyword->Text = DataStore::datensatz[DataStore::currentIndex].Keyword;
-	textBoxOutputTitle->Text = DataStore::datensatz[DataStore::currentIndex].Title;
-	textBoxOutputAuthor->Text = DataStore::datensatz[DataStore::currentIndex].Author;
-	textBoxOutputJournal->Text = DataStore::datensatz[DataStore::currentIndex].Journal;
-	textBoxOutputYear->Text = DataStore::datensatz[DataStore::currentIndex].Year;
-	textBoxOutputVolume->Text = DataStore::datensatz[DataStore::currentIndex].Volume;
-	textBoxOutputNumber->Text = DataStore::datensatz[DataStore::currentIndex].Number;
-	textBoxOutputPages->Text = DataStore::datensatz[DataStore::currentIndex].Pages;
-	textBoxOutputMonth->Text = DataStore::datensatz[DataStore::currentIndex].Month;
-	textBoxOutputNotes->Text = DataStore::datensatz[DataStore::currentIndex].Note;
 	
+	Referenzen currentReference = DataStore::datensatz[DataStore::currentIndex];
+
+	//Textbox zurücksetzen
+	textBoxOutputKeyword->Text = "";
+	textBoxOutputTitle->Text = "";
+	textBoxOutputAuthor->Text = "";
+	textBoxOutputJournal->Text = "";
+	textBoxOutputYear->Text = "";
+	textBoxOutputVolume->Text = "";
+	textBoxOutputNumber->Text = "";
+	textBoxOutputPages->Text = "";
+	textBoxOutputMonth->Text = "";
+	textBoxOutputNotes->Text = "";
+
+	// Nur Textboxes mit Inhalt werden angezeigt
+	if (!String::IsNullOrEmpty(currentReference.Keyword)) {
+		textBoxOutputKeyword->Text = currentReference.Keyword;
+		textBoxOutputKeyword->Visible = true;
+		labelKeyword->Visible = true;
+	}
+	else {
+		textBoxOutputKeyword->Visible = false;
+		labelKeyword->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Title)) {
+		textBoxOutputTitle->Text = currentReference.Title;
+		textBoxOutputTitle->Visible = true;
+		labelTitle->Visible = true;
+	}
+	else {
+		textBoxOutputTitle->Visible = false;
+		labelTitle->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Author)) {
+		textBoxOutputAuthor->Text = currentReference.Author;
+		textBoxOutputAuthor->Visible = true;
+		labelAuthor->Visible = true;
+	}
+	else {
+		textBoxOutputAuthor->Visible = false;
+		labelAuthor->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Journal)) {
+		textBoxOutputJournal->Text = currentReference.Journal;
+		textBoxOutputJournal->Visible = true;
+		labelJournal->Visible = true;
+	}
+	else {
+		textBoxOutputJournal->Visible = false;
+		labelJournal->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Year)) {
+		textBoxOutputYear->Text = currentReference.Year;
+		textBoxOutputYear->Visible = true;
+		labelYear->Visible = true;
+	}
+	else {
+		textBoxOutputYear->Visible = false;
+		labelYear->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Volume)) {
+		textBoxOutputVolume->Text = currentReference.Volume;
+		textBoxOutputVolume->Visible = true;
+		labelVolume->Visible = true;
+	}
+	else {
+		textBoxOutputVolume->Visible = false;
+		labelVolume->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Number)) {
+		textBoxOutputNumber->Text = currentReference.Number;
+		textBoxOutputNumber->Visible = true;
+		labelNumber->Visible = true;
+	}
+	else {
+		textBoxOutputNumber->Visible = false;
+		labelNumber->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Pages)) {
+		textBoxOutputPages->Text = currentReference.Pages;
+		textBoxOutputPages->Visible = true;
+		labelPages->Visible = true;
+	}
+	else {
+		textBoxOutputPages->Visible = false;
+		labelPages->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Month)) {
+		textBoxOutputMonth->Text = currentReference.Month;
+		textBoxOutputMonth->Visible = true;
+		labelMonth->Visible = true;
+	}
+	else {
+		textBoxOutputMonth->Visible = false;
+		labelMonth->Visible = false;
+	}
+
+	if (!String::IsNullOrEmpty(currentReference.Note)) {
+		textBoxOutputNotes->Text = currentReference.Note;
+		textBoxOutputNotes->Visible = true;
+		labelNote->Visible = true;
+	}
+	else {
+		textBoxOutputNotes->Visible = false;
+		labelNote->Visible = false;
+	}
 }
 };
 }
