@@ -420,12 +420,9 @@ namespace Informatik3 {
 		if (String::IsNullOrWhiteSpace(textBoxPublisher->Text)) {
 			errorMessage += "Publisher ist erforderlich!\n";
 		}
-		if (String::IsNullOrWhiteSpace(textBoxYear->Text)) {
-			errorMessage += "Year ist erforderlich!\n";
-		}
 		int year;
 		if (String::IsNullOrWhiteSpace(textBoxYear->Text) || !Int32::TryParse(textBoxYear->Text, year)) {//Check ob Zahl
-			errorMessage += "Year muss eine Zahl sein!\n";
+			errorMessage += "Year muss eine Zahl sein und ist erforderlich!\n";
 		}
 
 	

@@ -352,9 +352,6 @@ namespace Informatik3 {
 	}
 	private: System::Void buttonSave_Click(System::Object^  sender, System::EventArgs^  e) {
 		//speichern in DataStore::datensatz[DataStore::currentIndex]
-		//eventuell Gültigkeit der Eingaben überprüfen, z.B. Jahr nur Zahl erlaubt...
-		
-		
 		//Abfrage der erforderlichen Felder
 		String^ errorMessage = "";
 
@@ -372,7 +369,7 @@ namespace Informatik3 {
 		}
 		int year;
 		if (String::IsNullOrWhiteSpace(textBoxYear->Text) || !Int32::TryParse(textBoxYear->Text, year)) {//Check ob Zahl
-			errorMessage += "Year muss eine Zahl sein!\n";
+			errorMessage += "Year muss eine Zahl sein und ist erforderlich!\n";
 		}
 		int volume, number, pages;
 		if (!String::IsNullOrWhiteSpace(textBoxVolume->Text) && !Int32::TryParse(textBoxVolume->Text, volume)) {//Check ob Zahl

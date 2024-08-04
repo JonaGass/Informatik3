@@ -172,7 +172,7 @@ namespace Informatik3 {
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
-		ReferenzAnzeigen ^ frm2 = gcnew ReferenzAnzeigen;
+		ReferenzAnzeigen ^ frm2 = gcnew ReferenzAnzeigen();
 		frm2->Show();
 	
 	}

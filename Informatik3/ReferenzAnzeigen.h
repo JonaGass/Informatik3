@@ -16,6 +16,7 @@
 		/// </summary>
 		public ref class ReferenzAnzeigen : public System::Windows::Forms::Form
 		{
+	
 		public:
 			ReferenzAnzeigen(void)
 			{
@@ -100,6 +101,7 @@
 		private: System::Windows::Forms::Label^  labelTyp;
 		private: System::Windows::Forms::Button^  buttonHigher;
 		private: System::Windows::Forms::Button^  buttonLower;
+		private: System::Windows::Forms::Button^  buttonReturn;
 
 		private:
 			/// <summary>
@@ -166,6 +168,7 @@
 				this->labelTyp = (gcnew System::Windows::Forms::Label());
 				this->buttonHigher = (gcnew System::Windows::Forms::Button());
 				this->buttonLower = (gcnew System::Windows::Forms::Button());
+				this->buttonReturn = (gcnew System::Windows::Forms::Button());
 				this->SuspendLayout();
 				// 
 				// labelIndex
@@ -592,11 +595,22 @@
 				this->buttonLower->UseVisualStyleBackColor = true;
 				this->buttonLower->Click += gcnew System::EventHandler(this, &ReferenzAnzeigen::buttonLower_Click);
 				// 
+				// buttonReturn
+				// 
+				this->buttonReturn->Location = System::Drawing::Point(427, 731);
+				this->buttonReturn->Name = L"buttonReturn";
+				this->buttonReturn->Size = System::Drawing::Size(110, 23);
+				this->buttonReturn->TabIndex = 52;
+				this->buttonReturn->Text = L"Close and Return";
+				this->buttonReturn->UseVisualStyleBackColor = true;
+				this->buttonReturn->Click += gcnew System::EventHandler(this, &ReferenzAnzeigen::buttonReturn_Click);
+				// 
 				// ReferenzAnzeigen
 				// 
 				this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 				this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 				this->ClientSize = System::Drawing::Size(549, 776);
+				this->Controls->Add(this->buttonReturn);
 				this->Controls->Add(this->buttonLower);
 				this->Controls->Add(this->buttonHigher);
 				this->Controls->Add(this->textBoxOutputTyp);
@@ -668,7 +682,7 @@
 			int topOffset = 150;  //Nur TextBoxes mit Inhalt in geordneter Liste anzeigen
 			const int verticalSpacing = 10;  //Abstand
 
-			// Array {label, TextBox}
+			// Array {label, TextBox} jeweils in Paaren
 			array<System::Windows::Forms::Control^>^ controls = {
 				labelKeyword, textBoxOutputKeyword,
 				labelTitle, textBoxOutputTitle,
@@ -984,6 +998,9 @@
 			else {
 				MessageBox::Show("Letzter Eintrag");
 			}
+		}
+		private: System::Void buttonReturn_Click(System::Object^  sender, System::EventArgs^  e) {
+			this->Close();
 		}
 };
 }
